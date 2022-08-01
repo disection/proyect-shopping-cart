@@ -4,13 +4,14 @@ import Products from "./Pages/Products";
 import ProductsRegister from "./Pages/ProductsRegister";
 import ShoppingCart from "./Pages/ShoppingCart";
 import ShoppingHistory from "./Pages/ShoppingHistory";
+//import products from "./mocks/productos.js  "
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <div className="row">
-          <div className="col-12 col">
+          <div className=" col">
             <nav class="navbar navbar-expand-lg bg-ligt">
               <div className="container-fluid">
                 <a class="navbar-brand" href="/">Shopping Card</a>
@@ -38,7 +39,7 @@ function App() {
             <main className='container'>
               <div className="row">
                 
-                <div className="col-6">
+                <div className="col-12">
                   <Routes>
                     <Route path="/" element={<h1>Bienvenidos a la Shopping Cart</h1>} />
                     <Route path="products" element={<Products/>} />
