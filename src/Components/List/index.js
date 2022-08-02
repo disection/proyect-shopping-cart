@@ -4,7 +4,7 @@ const List = props => {
     return (
         <div className="row row-cols-1 row-cols-md-4 g-3">
             {
-                data.map((product, index) => {                    
+                data.map((product) => {                    
                     return (
                         <ProductCard data={product}/>
                     )
