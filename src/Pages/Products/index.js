@@ -21,8 +21,23 @@ const Products = () => {
     //variable que contiene los datos del servidor
     console.log('productsData', productsData)
     return (
-        <><h1>Productos</h1>
-            <List data={productsData} />
-        </>)
+        <>
+        <h1>Productos</h1>
+       
+        <label for="exampleDataList" class="form-label">Datalist example</label>
+                <input className="form-control m-3" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."/>
+                    <datalist id="datalistOptions">
+                        <option value="San Francisco"/>
+                            <option value="New York"/>
+                                <option value="Seattle"/>
+                                    <option value="Los Angeles"/>
+                                        <option value="Chicago"/>
+                                        </datalist>
+       
+        
+
+            <List data={productsData} /> 
+            </>
+       )
 }
 export default Products
