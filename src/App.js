@@ -5,9 +5,17 @@ import ProductDetail from "./Pages/ProductDetail";
 import ProductsRegister from "./Pages/ProductsRegister";
 import ShoppingCart from "./Pages/ShoppingCart";
 import ShoppingHistory from "./Pages/ShoppingHistory";
+import { useState } from 'react'
 
 
 function App() {
+  const [shoppingCart, setShoppingCart] = useState('')
+
+  const addToCart = product => {
+    setShoppingCart([...shoppingCart, product])
+  }
+
+
   return (
     <div className="App">
       <div className="container">
@@ -43,11 +51,11 @@ function App() {
                 <div className="col-12">
                   <Routes>
                     <Route path="/" element={<h1>Bienvenidos a la Shopping Cart</h1>} />
-                    <Route path="/products" element={<Products/>} />
+                    <Route path="/products" element={<Products addHandler={addToCart}/>} />
                     <Route path="/product-detail/:id" element={<ProductDetail/>} />
                     <Route path="/products-register" element={<ProductsRegister />} />
                     <Route path="/shopping-history" element={<ShoppingHistory />} />
-                    <Route path="/shopping-cart" element={<ShoppingCart />} />                    
+                    <Route path="/shopping-cart" element={<ShoppingCart shoppingCart = {shoppingCart}/>} />                    
                   </Routes>
                 </div>
                 

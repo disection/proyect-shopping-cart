@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Products from '../Products'
 
-const ProductDetail = () => {
+const ProductDetail = ( {addHandler} ) => {
     const [selectedProduct, setSelectedProduct] = useState({})
     const { id } = useParams()
     console.log(id)
@@ -31,7 +32,7 @@ const ProductDetail = () => {
                     <input type="text" className="form-control" placeholder="1" />
                     <button className="btn btn-outline-secondary" type="button" >+</button>
                 </div>
-                <button type="button" className="btn btn-warning">agregar al carrito</button>
+                <button type="button" className="btn btn-warning" onClick={()=>addHandler(product)}>agregar al carrito</button>
             </div>  </div>
 
 
